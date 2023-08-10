@@ -22,4 +22,24 @@
     .paylists li {
        margin: 0px 10px;
     }
+
+    .flight-deptime {
+        font-size: 20px;
+      }
+      
+      .airport-name {
+        font-size: 12px;
+      }
+      
+      .city-name {
+        font-size: 11px;
+      }
+
+      .img-arrow {
+        width: 70px;
+      }
+
+      .f-time {
+        font-size: 13px;
+      }
 }
