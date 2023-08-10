@@ -1,0 +1,679 @@
+@import url('fonts.css');
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+body p {
+    font-size: 14px;
+    line-height: 1.8em;
+}
+
+.text-catamaran {
+    font-family: 'Catamaran', sans-serif;
+}
+
+.text-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-nunito {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.text-opensans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.text-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-ptsans {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.text-raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.text-blue {
+    color: #2196c4;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.font-300 {
+    font-weight: 300;
+}
+
+.font-400 {
+    font-weight: 400;
+}
+
+.font-500 {
+    font-weight: 500;
+}
+
+.font-600 {
+    font-weight: 600;
+}
+
+.font-700 {
+    font-weight: 700;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-13 {
+    font-size: 13px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-15 {
+    font-size: 15px;
+}
+
+.navbar {
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-color {
+  background-color: #212325;
+}
+
+.navbar.blue {
+    background-color: #212325;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    position: fixed;
+    top: 0;
+}
+
+.navbar .navbar-brand h5 {
+    color: white;
+    font-weight: 400;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link.active {
+    color: #2196c4;
+    font-weight: 400;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #2196c4;
+}
+
+.toggle-btn {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.toggle-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-verify {
+    background: #2196c4;
+    color: white;
+    border-radius: 0px;
+    border: 1px solid #2196c4;
+    font-size: 14px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-verify:hover {
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+}
+
+.login-drop {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 10px;
+    border: none;
+}
+
+.login-drop:hover {
+    color: white;
+}
+
+.login-drop:focus {
+   color: white !important;
+   border: 1px solid transparent !important;
+}
+
+.auth-drop {
+    background: #2196c4;
+    border-radius: 0px;
+    min-width: 130px;
+}
+
+.auth-drop a {
+    color: white;
+    font-size: 13px;
+}
+
+.auth-drop a:hover {
+    color: white;
+    background: #2196c4;
+}
+
+.auth-drop a:focus {
+    color: white;
+    background: #2196c4;
+}
+
+
+.banner-area {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(../img/family-travel.jpg) no-repeat center;
+    min-height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.flight-form-area {
+    background: white;
+    padding: 20px 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.tab-item .nav-link {
+    color: #2196c4;
+    background: white;
+    border: 1px solid #2196c4;
+    font-size: 15px;
+    margin: 0px 10px 10px 10px;
+    font-weight: 400;
+    padding: 8px 20px;
+}
+
+.tab-item .nav-link.active {
+    color: white;
+    background: #2196c4;
+    border: 1px solid #2196c4;
+}
+
+/* Custom Select2 Styles */
+
+.select2-container--default .select2-selection--single {
+    border-radius: 0px !important;
+    height: 35px !important;
+    font-size: 14px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 33px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 33px !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border-radius: 0px !important;
+    height: 35px !important;
+    font-size: 14px !important;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus {
+    outline: 0 !important;
+}
+
+.book-label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.select2-hidden-accessible option {
+    font-size: 14px !important;
+}
+
+.book-control {
+    font-size: 14px;
+    border-radius: 0px;
+    border-color: rgb(179, 177, 177);
+}
+
+.book-control:focus {
+    box-shadow: none;
+    border-color: rgb(179, 177, 177);
+}
+
+.exchange-icon {
+    font-size: 20px;
+}
+
+.travel-input {
+    border: 1px solid rgb(179, 177, 177);
+    padding: 6.5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.travel-input .trav-border {
+    border-right: 1px solid rgb(179, 177, 177);
+}
+
+.travel-body {
+    position: absolute;
+    top: 20;
+    left: 0;
+    width: 100%;
+    padding: 10px 0px;
+    background: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    display: none;
+    max-height: 160px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.travel-body.open {
+    display: block;
+}
+
+.travel-body .travel-list {
+    border-bottom: 1px solid rgb(179, 177, 177);
+    padding: 10px;
+}
+
+.travel-body .travel-list:last-child {
+    border-bottom: none;
+}
+
+.travel-list .travel-sign {
+    font-size: 10px;
+    background-color: #2196c4;
+    border-radius: 50%;
+    padding: 3px 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.travel-list .travel-count {
+    font-weight: 500;
+    margin: 0px 5px;
+}
+
+.btn-submit {
+    background: #2196c4;
+    color: white;
+    border-radius: 0px;
+    border: 1px solid #2196c4;
+    transition: all 0.5s ease-in-out;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn-submit:hover {
+    color: #2196c4;
+    background: white;
+    border: 1px solid #2196c4;
+}
+
+.btn-add {
+    background: #2196c4;
+    color: white;
+    border-radius: 0px;
+    border: 1px solid #2196c4;
+    transition: all 0.5s ease-in-out;
+    font-size: 14px;
+}
+
+.btn-add:hover {
+    color: #2196c4;
+    background: white;
+    border: 1px solid #2196c4;
+}
+
+.passdesc {
+    font-size: 11px;
+    font-weight: 600;
+    display: block;
+}
+
+section {
+    margin-top: 50px;
+}
+
+   /* Carousel Slider Center Mode */
+
+   .my-slider .slider-arrow {
+    border: 0;
+    background: rgba(0,0,0,0.5);
+    display: none !important;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translate(0, -50%);
+    outline: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+
+  .my-slider:hover .slider-arrow {
+    display: block !important;
+  }
+
+  /* Modificação só pra a seta do próximo carousel ficar na direita */
+  
+  .my-slider .slider-arrow.next {
+    right: 0;
+    margin-right: 15px;
+  }
+
+  .myslider-dots {
+    list-style: none;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .myslider-dots li {
+    display: inline-block;
+    margin: 0 3px;
+  }
+  
+  .myslider-dots li > button {
+    width: 30px;
+    height: 5px;
+    border: none;
+    background: #cbeaf7;
+    color: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .myslider-dots li.slick-active > button {
+    background: #2196c4;
+  }
+
+  .service-area {
+    background: whitesmoke;
+    padding: 20px;
+    margin: 10px 10px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .service-link:hover .service-area {
+    background: #ddf0f8;
+    margin-top: 0px;
+  }
+
+  .service-area .icon {
+    color: #2196c4;
+    font-size: 50px;
+  }
+
+  .service-area .icon-font {
+    color: #2196c4;
+    font-size: 42px;
+  }
+
+  .service-area .service-head {
+    font-size: 20px;
+    color: #373c41;
+  }
+
+  .service-area .service-text {
+    color: grey;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .flight-deals {
+    height: 270px;
+    border-radius: 6px;
+  }
+
+  .abs-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 270px;
+    border-radius: 6px;
+  }
+
+  .abs-image .img-flight {
+    width: 100%;
+    height: 270px;
+    border-radius: 6px;
+  }
+
+  .flight-deals .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 270px;
+    border-radius: 6px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  }
+
+  .overlay .container-overlay {
+    padding: 15px 20px;
+  }
+
+  .overlay .top-info {
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .overlay .top-right-info {
+    top: 15px;
+    right: 20px;
+    position: absolute;
+  }
+
+  .overlay .top-right-info span {
+    color: white;
+    background: #2196c4;
+    font-size: 11px;
+    padding: 5px 8px;
+    font-weight: 400;
+    border-radius: 4px;
+  }
+
+  .overlay .bottom-left-info {
+    bottom: 15px;
+    left: 20px;
+    position: absolute;
+  }
+
+  .overlay .bottom-left-info small {
+     font-size: 10px;
+  }
+
+  .overlay .bottom-right-info {
+    bottom: 25px;
+    right: 20px;
+    position: absolute;
+  }
+
+  .overlay .bottom-right-info .btn-book {
+    position: relative;
+    color: white;
+    border: 1px solid #2196c4;
+    background: #2196c4;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+
+  .overlay .bottom-right-info .btn-book:hover {
+    color: #2196c4;
+    background: transparent;
+    border: 1px solid #2196c4;
+  }
+
+  .newsarea {
+    background: #ddf0f8;
+    padding: 40px 0px;
+  }
+
+  .news-control {
+    font-size: 14px;
+    padding: 15px 15px;
+    color: grey;
+    font-weight: 400;
+    border: none;
+  }
+
+  .news-control:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    color: grey;
+  }
+
+  .btn-news {
+    font-size: 14px;
+    background: #2196c4;
+    color: white;
+    font-weight: 400;
+    padding: 15px;
+  }
+
+  .btn-news:hover {
+    color: white;
+    background: #2196c4;
+  }
+
+  .paylists {
+    list-style-type: none;
+    display: flex;
+    padding-inline-start: 0px;
+  }
+
+  .paylists li {
+    margin: 0px 20px;
+  }
+
+  .paylists li img:hover {
+    filter: grayscale(100%);
+  }
+
+  .sec-text {
+    border: 2px solid grey;
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 7px 15px;
+    font-weight: 500;
+    background: white;
+  }
+
+  .sec-text:hover {
+    border: 2px solid grey;
+    color: grey;
+    background: white;
+  }
+
+  .footer-area {
+    background: #212325;
+    padding: 40px 0px 20px 0px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    color: whitesmoke;
+    font-weight: 300;
+    line-height: 1.8em;
+  }
+
+  .foot-list {
+    list-style-type: none;
+    padding-inline-start: 0px;
+  }
+
+  .foot-list li a {
+    color: whitesmoke;
+    font-size: 13px;
+    text-decoration: none;
+    line-height: 2.2em;
+  }
+
+  .foot-list li a:hover {
+    color: #2196c4;
+  }
+
+  .social-links a {
+    text-decoration: none;
+    color: white;
+    margin: 0px 5px;
+    font-size: 20px;
+  }
+
+  #myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #2196c4;
+    color: white;
+    cursor: pointer;
+    height: 50px !important;
+    width: 55px !important;
+    border-radius: 50%;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
+
+  .dest-area {
+    padding: 20px 0px;
+    border-bottom: 1px solid #b8b9b9;
+  }
+
+  .dest-area .location {
+    font-size: 17px;
+  }
+
+  .dest-area .date,.persons {
+    font-size: 14px;
+    font-weight: 400;
+    color: grey;
+  }
+
+  .btn-search {
+    color: grey;
+    border: none;
+  }
+
+  .btn-search:hover {
+    color: grey;
+    border: none;
+  }
+

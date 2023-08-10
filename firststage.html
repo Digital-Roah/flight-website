@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Flight Website - First Stage</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="slick-1.8.1/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick-1.8.1/slick/slick-theme.css">
+    <!-- Icofont CSS -->
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <!-- Font Awesome JS -->
+    <script src="js/font-awesome.js"></script>
+    <!-- Line Awesome CSS -->
+    <link rel="stylesheet" href="line-awesome/css/line-awesome.css">
+    <link rel="stylesheet" href="line-awesome/css/line-awesome.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="aos/aos.css">
+    <!-- Select 2 CSS -->
+    <link rel="stylesheet" href="css/select2.min.css">
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-color">
+        <div class="container">
+        <a class="navbar-brand" href="index.html"><h5>Flight Website</h5></a>
+        <button class="navbar-toggler d-lg-none toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav me-auto mt-2 mt-lg-0 offset-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+              </div>
+            </li> -->
+          </ul>
+          <div class="d-flex my-2 my-lg-0">
+            <a href="" class="btn btn-verify"><span class="la la-user-circle-o"></span> Verify Booking</a>
+            <div class="dropdown">
+              <a class="btn login-drop" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                   <span class="icofont-ui-user"></span> Account <span class="la la-angle-down font-12"></span>
+                  </a>
+              <div class="dropdown-menu auth-drop" aria-labelledby="triggerId">
+                <a class="dropdown-item" href="#"><span class="icofont-login me-1"></span> Login</a>
+                <a class="dropdown-item" href="#"><span class="fa fa-user-plus me-1"></span>  Register</a>
+              </div>
+            </div>
+          </div>
+          <!-- <form class="d-flex my-2 my-lg-0">
+            <input class="form-control me-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+    
+  </header>
+
+  <main>
+
+    <div class="dest-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                 <span class="location font-700 me-3">Lagos - London</span>
+                 <span class="date me-2"><span class="fas fa-calendar-alt text-blue me-1"></span> Sun 6 Aug</span>
+                 <span class="persons"><span class="icofont-user-alt-4 text-blue me-1"></span> 1 adult</span>
+                </div>
+
+                <div class="col-md-3 text-end">
+                   <a href="#contentId" data-bs-toggle="collapse" class="btn btn-search p-0" aria-expanded="false" aria-controls="contentId"><span class="fas fa-search text-blue"></span> Search</a>
+                </div>
+            </div>
+
+            <div class="collapse mt-2" id="contentId">
+
+                <ul class="nav nav-pills mb-2 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item tab-item" role="presentation">
+                      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">One Way</button>
+                    </li>
+                    <li class="nav-item tab-item" role="presentation">
+                      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Return</button>
+                    </li>
+                    <li class="nav-item tab-item" role="presentation">
+                      <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Multi-City</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+  
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                      <form action="#un" method="post">
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group mt-md-0">
+                                <label for="from" class="book-label">From</label>
+                                <select name="from" id="from" class="form-control select-control">
+                                  <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                                  <option value="Abuja">Abuja</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-1 text-center d-none d-md-block">
+                              <br class="d-none d-md-block">
+                              <span class="la la-exchange exchange-icon mt-md-2"></span>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group mt-md-0 mt-2">
+                                <label for="to" class="book-label">To</label>
+                                <select name="to" id="to" class="form-control select-control">
+                                  <option value="Abuja">Abuja</option>
+                                  <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group mt-md-0 mt-2">
+                              <label for="departure" class="book-label">Departure</label>
+                              <input type="date" name="departure" id="departure" class="form-control book-control">
+                            </div>
+                            </div>
+                          </div>
+  
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group mt-2">
+                                <label for="class" class="book-label">Class</label>
+                                <select name="class" id="class" class="form-control select-control">
+                                  <option value="1">Economy</option>
+                                  <option value="2">Premium</option>
+                                  <option value="3">Business</option>
+                                  <option value="4">First</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group mt-2">
+                                <label for="passengers" class="book-label">Passengers</label>
+                                <div class="pass-drop position-relative">
+                                  <div class="travel-input" id="travel-input1" onclick="openpassdropdown(1)">
+                                    <span class="icofont-ui-user me-1"></span> <span class="trav-border me-2"></span> <span class="travel-text"><span class="travel-num" id="num1">1</span> Traveller(s)</span> <span class="la la-angle-down float-end font-12" style="padding-top: 6px;"></span>
+                                  </div>
+                                  <div class="travel-body" id="travel-body1">
+                                      <div class="travel-list">
+                                          <div class="row">
+                                            <div class="col-6">
+                                              <span class="font-14">Adults</span>
+                                              <small class="passdesc text-black-50">(12<sup>+</sup> years)</small>
+                                            </div>
+                                            <div class="col-6 text-end pt-1">
+                                              <span class="travel-sign" id="adult-minus1" onclick="remadult(1)"><i class="fa fa-minus"></i></span>
+                                              <span class="travel-count" id="adult-num1">1</span>
+                                              <span class="travel-sign" id="adult-plus1" onclick="addadult(1)"><i class="fa fa-plus"></i></span>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="travel-list">
+                                        <div class="row">
+                                          <div class="col-6">
+                                            <span class="font-14">Children</span>
+                                            <small class="passdesc text-black-50">(2 - 12 years)</small>
+                                          </div>
+                                          <div class="col-6 text-end pt-1">
+                                            <span class="travel-sign" id="child-minus1" onclick="remchild(1)"><i class="fa fa-minus"></i></span>
+                                            <span class="travel-count" id="child-num1">0</span>
+                                            <span class="travel-sign" id="child-plus1" onclick="addchild(1)"><i class="fa fa-plus"></i></span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="travel-list">
+                                      <div class="row">
+                                        <div class="col-6">
+                                          <span class="font-14">Infants</span>
+                                          <small class="passdesc text-black-50">(Below 2 years)</small>
+                                        </div>
+                                        <div class="col-6 text-end pt-1">
+                                          <span class="travel-sign" id="infant-minus1" onclick="reminfant(1)"><i class="fa fa-minus"></i></span>
+                                          <span class="travel-count" id="infant-num1">0</span>
+                                          <span class="travel-sign" id="infant-plus1" onclick="addinfant(1)"><i class="fa fa-plus"></i></span>
+                                        </div>
+                                      </div>
+                                      <span class="text-danger font-12 font-500" id="danger-msg1"></span>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <input type="hidden" name="adults" id="adult1" value="1">
+                              <input type="hidden" name="children" id="child1">
+                              <input type="hidden" name="infants" id="infant1">
+                              <input type="hidden" name="type" value="one-way">
+                            </div>
+                            <div class="col-md-4 mt-md-3 mt-0">
+                              <div class="form-group mt-md-4 mt-3">
+                                <div class="form-check form-check-inline">
+                                  <input class="form-check-input" type="checkbox" name="nonstop" id="nonstop" value="1">
+                                  <label class="form-check-label book-label" for="nonstop">Nonstop flights only</label>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+  
+                          <div class="row justify-content-center">
+                            <div class="col-md-4">
+                              <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-submit">Search Flight <span class="fa fa-plane-departure ps-1"></span></button>
+                              </div>
+                            </div>
+                          </div>
+                          
+                      </form>
+                    </div>
+  
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                      <form action="#un" method="post">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-group mt-md-0">
+                              <label for="from" class="book-label">From</label>
+                              <select name="from" id="from" class="form-control select-control2">
+                                <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                                <option value="Abuja">Abuja</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-1 text-center d-none d-md-block">
+                            <br class="d-none d-md-block">
+                            <span class="la la-exchange exchange-icon mt-md-2"></span>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group mt-md-0 mt-2">
+                              <label for="to" class="book-label">To</label>
+                              <select name="to" id="to" class="form-control select-control2">
+                                <option value="Abuja">Abuja</option>
+                                <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group mt-md-0 mt-2">
+                            <label for="departure" class="book-label">Departure</label>
+                            <input type="date" name="departure" id="departure" class="form-control book-control">
+                          </div>
+                          </div>
+                        </div>
+  
+                        <div class="row">
+                          <div class="col-md-3">
+                            <div class="form-group mt-2">
+                            <label for="return" class="book-label">Return</label>
+                            <input type="date" name="return" id="return" class="form-control book-control">
+                          </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group mt-2">
+                              <label for="class" class="book-label">Class</label>
+                              <select name="class" id="class" class="form-control select-control2">
+                                <option value="1">Economy</option>
+                                <option value="2">Premium</option>
+                                <option value="3">Business</option>
+                                <option value="4">First</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group mt-2">
+                              <label for="passengers" class="book-label">Passengers</label>
+                              <div class="pass-drop position-relative">
+                                <div class="travel-input" id="travel-input2" onclick="openpassdropdown(2)">
+                                  <span class="icofont-ui-user me-1"></span> <span class="trav-border me-2"></span> <span class="travel-text"><span class="travel-num" id="num2">1</span> Traveller(s)</span> <span class="la la-angle-down float-end font-12" style="padding-top: 6px;"></span>
+                                </div>
+                                <div class="travel-body" id="travel-body2">
+                                    <div class="travel-list">
+                                        <div class="row">
+                                          <div class="col-6">
+                                            <span class="font-14">Adults</span>
+                                            <small class="passdesc text-black-50">(12<sup>+</sup> years)</small>
+                                          </div>
+                                          <div class="col-6 text-end pt-1">
+                                            <span class="travel-sign" id="adult-minus2" onclick="remadult(2)"><i class="fa fa-minus"></i></span>
+                                            <span class="travel-count" id="adult-num2">1</span>
+                                            <span class="travel-sign" id="adult-plus2" onclick="addadult(2)"><i class="fa fa-plus"></i></span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="travel-list">
+                                      <div class="row">
+                                        <div class="col-6">
+                                          <span class="font-14">Children</span>
+                                          <small class="passdesc text-black-50">(2 - 12 years)</small>
+                                        </div>
+                                        <div class="col-6 text-end pt-1">
+                                          <span class="travel-sign" id="child-minus2" onclick="remchild(2)"><i class="fa fa-minus"></i></span>
+                                          <span class="travel-count" id="child-num2">0</span>
+                                          <span class="travel-sign" id="child-plus2" onclick="addchild(2)"><i class="fa fa-plus"></i></span>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="travel-list">
+                                    <div class="row">
+                                      <div class="col-6">
+                                        <span class="font-14">Infants</span>
+                                        <small class="passdesc text-black-50">(Below 2 years)</small>
+                                      </div>
+                                      <div class="col-6 text-end pt-1">
+                                        <span class="travel-sign" id="infant-minus2" onclick="reminfant(2)"><i class="fa fa-minus"></i></span>
+                                        <span class="travel-count" id="infant-num2">0</span>
+                                        <span class="travel-sign" id="infant-plus2" onclick="addinfant(2)"><i class="fa fa-plus"></i></span>
+                                      </div>
+                                    </div>
+                                    <span class="text-danger font-12 font-500" id="danger-msg2"></span>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                            <input type="hidden" name="adults" id="adult2" value="1">
+                            <input type="hidden" name="children" id="child2">
+                            <input type="hidden" name="infants" id="infant2">
+                            <input type="hidden" name="type" value="round">
+                          </div>
+                          <div class="col-md-3 mt-md-3 mt-0">
+                            <div class="form-group mt-md-4 mt-3">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="nonstop" id="nonstop" value="1">
+                                <label class="form-check-label book-label" for="nonstop">Nonstop flights only</label>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="row justify-content-center">
+                          <div class="col-md-4">
+                            <div class="d-grid mt-4">
+                              <button type="submit" class="btn btn-submit">Search Flight <span class="fa fa-plane-departure ps-1"></span></button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </form>
+                    </div>
+  
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                      <form action="#un" method="post">
+  
+                        <div id="tbody">
+  
+                        <div id="first-row">
+                        <h5 class="text-blue font-600">Trip</h5>
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="form-group mt-md-0">
+                              <label for="from" class="book-label">From</label>
+                              <select name="from[]" id="from" class="form-control book-control select-control3">
+                                <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                                <option value="Abuja">Abuja</option>
+                              </select>
+                            </div>
+                          </div>
+  
+                          <div class="col-md-4">
+                            <div class="form-group mt-md-0 mt-2">
+                              <label for="to" class="book-label">To</label>
+                              <select name="to[]" id="to" class="form-control book-control select-control3">
+                                <option value="Abuja">Abuja</option>
+                                <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group mt-md-0 mt-2">
+                            <label for="departure" class="book-label">Departure</label>
+                            <input type="date" name="departure[]" id="departure" class="form-control book-control">
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+  
+                    </div>
+  
+                        <button class="btn btn-add mt-3" type="button" id="addBtn"><span class="icofont-plus pe-1"></span> Add Trip</button>
+  
+                        <div class="row mt-2">
+                          <div class="col-md-4">
+                            <div class="form-group mt-2">
+                              <label for="class" class="book-label">Class</label>
+                              <select name="class" id="class" class="form-control select-control3">
+                                <option value="1">Economy</option>
+                                <option value="2">Premium</option>
+                                <option value="3">Business</option>
+                                <option value="4">First</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="form-group mt-2">
+                              <label for="passengers" class="book-label">Passengers</label>
+                              <div class="pass-drop position-relative">
+                                <div class="travel-input" id="travel-input3" onclick="openpassdropdown(3)">
+                                  <span class="icofont-ui-user me-1"></span> <span class="trav-border me-2"></span> <span class="travel-text"><span class="travel-num" id="num3">1</span> Traveller(s)</span> <span class="la la-angle-down float-end font-12" style="padding-top: 6px;"></span>
+                                </div>
+                                <div class="travel-body" id="travel-body3">
+                                    <div class="travel-list">
+                                        <div class="row">
+                                          <div class="col-6">
+                                            <span class="font-14">Adults</span>
+                                            <small class="passdesc text-black-50">(12<sup>+</sup> years)</small>
+                                          </div>
+                                          <div class="col-6 text-end pt-1">
+                                            <span class="travel-sign" id="adult-minus3" onclick="remadult(3)"><i class="fa fa-minus"></i></span>
+                                            <span class="travel-count" id="adult-num3">1</span>
+                                            <span class="travel-sign" id="adult-plus3" onclick="addadult(3)"><i class="fa fa-plus"></i></span>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="travel-list">
+                                      <div class="row">
+                                        <div class="col-6">
+                                          <span class="font-14">Children</span>
+                                          <small class="passdesc text-black-50">(2 - 12 years)</small>
+                                        </div>
+                                        <div class="col-6 text-end pt-1">
+                                          <span class="travel-sign" id="child-minus3" onclick="remchild(3)"><i class="fa fa-minus"></i></span>
+                                          <span class="travel-count" id="child-num3">0</span>
+                                          <span class="travel-sign" id="child-plus3" onclick="addchild(3)"><i class="fa fa-plus"></i></span>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <div class="travel-list">
+                                    <div class="row">
+                                      <div class="col-6">
+                                        <span class="font-14">Infants</span>
+                                        <small class="passdesc text-black-50">(Below 2 years)</small>
+                                      </div>
+                                      <div class="col-6 text-end pt-1">
+                                        <span class="travel-sign" id="infant-minus3" onclick="reminfant(3)"><i class="fa fa-minus"></i></span>
+                                        <span class="travel-count" id="infant-num3">0</span>
+                                        <span class="travel-sign" id="infant-plus3" onclick="addinfant(3)"><i class="fa fa-plus"></i></span>
+                                      </div>
+                                    </div>
+                                    <span class="text-danger font-12 font-500" id="danger-msg3"></span>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                            <input type="hidden" name="adults" id="adult3" value="1">
+                            <input type="hidden" name="children" id="child3">
+                            <input type="hidden" name="infants" id="infant3">
+                            <input type="hidden" name="type" value="multi-city">
+                          </div>
+                          <div class="col-md-4 mt-md-3 mt-0">
+                            <div class="form-group mt-md-4 mt-3">
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="nonstop" id="nonstop" value="1">
+                                <label class="form-check-label book-label" for="nonstop">Nonstop flights only</label>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="row justify-content-center">
+                          <div class="col-md-4">
+                            <div class="d-grid mt-4">
+                              <button type="submit" class="btn btn-submit">Search Flight <span class="fa fa-plane-departure ps-1"></span></button>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </form>
+                    </div>
+  
+                  </div>
+        
+            </div>
+
+        </div>
+    </div>
+
+    <section></section>
+
+</main>
+
+<footer class="footer-area" data-aos="fade" data-aos-duration="1500">
+  <!-- place footer here -->
+  <div class="container">
+    <div class="row">
+      <div class="col lg-3">
+        <h5 class="footer-head text-white">Flight Website</h5>
+        <p class="footer-text">Flight Website is a privately owned flight/airline logistics company. Our Services includes Airline flight booking, Visa Assistance, Hotel Accomodation and Car Rentals.</p>
+      </div>
+      <div class="col-lg-3">
+        <h5 class="footer-head text-white">About Us</h5>
+        <ul class="foot-list">
+          <li><a href="#un">Home</a></li>
+          <li><a href="#un">About</a></li>
+          <li><a href="#un">Terms and Conditions</a></li>
+          <li><a href="#un">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5 class="footer-head text-white">Services</h5>
+        <ul class="foot-list">
+          <li><a href="#un">Baggage</a></li>
+          <li><a href="#un">Protocol</a></li>
+          <li><a href="#un">Visa Assistance</a></li>
+          <li><a href="#un">Hotel Accomodation</a></li>
+          <li><a href="#un">Car Rentals</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5 class="footer-head text-white">Support</h5>
+        <ul class="foot-list">
+          <li><a href="#un">FAQ</a></li>
+          <li><a href="#un">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-4 text-center">
+      <div class="social-links">
+       <a href="#un"><i class="fab fa-facebook"></i></a>
+       <a href="#un"><i class="fab fa-instagram"></i></a>
+       <a href="#un"><i class="fab fa-twitter"></i></a>
+      </div>
+
+      <p class="copyright text-white font-300 font-13 mt-2">Copyright &copy; 2023. Flight Website.</p>
+    </div>
+
+  </div>
+</footer>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-level-up-alt"></i></button>
+
+  <!-- Bootstrap JS -->
+  <script src="bootstrap/js/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- Jquery 3.5.1 -->
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <!-- Slick Carousel JS -->
+  <script src="slick-js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="slick-1.8.1/slick-1.8.1/slick/slick.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+
+      // Services Slider 
+   $('.my-slider').slick({
+    dots: true,
+   dotsClass: 'myslider-dots',
+infinite: true,
+speed: 300,
+slidesToShow: 3,
+slidesToScroll: 1,
+speed: 1000,
+autoplay:true,
+autoplaySpeed:2000,
+arrows: true,
+nextArrow: '<button class="slider-arrow next inverted"><i class="icofont-rounded-right text-white"></i></button>',
+prevArrow: '<button class="slider-arrow prev inverted"><i class="icofont-rounded-left text-white"></i></button>',
+responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      dots: true,
+      arrows: true,
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 1,
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }
+  // You can unslick at a given breakpoint now by adding:
+  // settings: "unslick"
+  // instead of a settings object
+]
+});
+
+});
+  </script>
+  <!-- Select2 JS -->
+  <script src="js/select2.min.js"></script>
+  <!-- To get select dropdown on bs tab change -->
+  <script>
+    $('button[data-bs-target="#pills-home"]').on('shown.bs.tab', function (e) {
+      $('.select-control').select2({
+        width: "100%",
+      });
+    });
+    
+    $('button[data-bs-target="#pills-profile"]').on('shown.bs.tab', function (e) {
+      $('.select-control2').select2({
+        width: "100%",
+      });
+    });
+    
+    $('button[data-bs-target="#pills-contact"]').on('shown.bs.tab', function (e) {
+      $('.select-control3').select2({
+        width: "100%",
+      });
+    });
+
+    $('.select-control').select2({
+        width: "100%",
+      });
+    
+    var today = new Date().toISOString().split('T')[0];
+    
+    $('input[type="date"]').attr('min', today);
+    
+  </script>
+  <!-- WOW JS -->
+  <script src="js/wow.js"></script>
+  <script>
+      wow = new WOW(
+      {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0,          // default
+          mobile:       true,       // default
+          live:         true        // default
+      }
+      )
+      wow.init();
+           
+  </script>   
+  <!-- Custom JS -->
+  <script src="js/scripts.js"></script>
+  <!-- AOS JS -->
+  <script src="aos/aos.js"></script>
+  <script>
+                /**
+ * Animation on scroll function and init
+ */
+ function aos_init() {
+          AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+          });
+        }
+        window.addEventListener('load', () => {
+          aos_init();
+        });
+  </script>
+
+  <!-- Passengers Dropdown Functions -->
+  <script>
+    function openpassdropdown(id) {
+      $('#travel-body'+id).toggleClass('open');
+    }
+
+    function addadult(id) {
+      if($('#adult'+id).val() == '' || $('#adult'+id).val() == '0') {
+        var adult = 0;
+      } else {
+        var adult = parseInt($('#adult'+id).val());
+      }
+      if($('#child'+id).val() == '' || $('#child'+id).val() == '0') {
+        var child = 0;
+      } else {
+        var child = parseInt($('#child'+id).val());
+      }
+      if($('#infant'+id).val() == '' || $('#infant'+id).val() == '0') {
+        var infant = 0;
+      } else {
+        var infant = parseInt($('#infant'+id).val());
+      }
+      var num = parseInt($('#adult-num'+id).html());
+      var result = num + 1;
+
+      if(infant > result) {
+        $('#danger-msg'+id).html('Add least an Adult to an Infant');
+        var newnum = adult;
+      } else {
+        $('#danger-msg'+id).html('');
+        var newnum = result;
+      }
+
+      $('#adult-num'+id).html(newnum);
+      $('#adult'+id).val(newnum);
+
+      var totalpass = newnum + child + infant;
+      $('#num'+id).html(totalpass);
+    }
+
+    function remadult(id) {
+      if($('#adult'+id).val() == '' || $('#adult'+id).val() == '0') {
+        var adult = 0;
+      } else {
+        var adult = parseInt($('#adult'+id).val());
+      }
+      if($('#child'+id).val() == '' || $('#child'+id).val() == '0') {
+        var child = 0;
+      } else {
+        var child = parseInt($('#child'+id).val());
+      }
+      if($('#infant'+id).val() == '' || $('#infant'+id).val() == '0') {
+        var infant = 0;
+      } else {
+        var infant = parseInt($('#infant'+id).val());
+      }
+      var num = parseInt($('#adult-num'+id).html());
+      var result = num - 1;
+
+      if(infant > result) {
+        $('#danger-msg'+id).html('Add least an Adult to an Infant');
+        var newnum = adult;
+      }else if(result < 0) {
+        $('#danger-msg'+id).html('');
+        var newnum = 0;
+      } else {
+        $('#danger-msg'+id).html('');
+        var newnum = result;
+      }
+
+      $('#adult-num'+id).html(newnum);
+      $('#adult'+id).val(newnum)
+
+      var totalpass = newnum + child + infant;
+      $('#num'+id).html(totalpass);
+    }
+
+    function addchild(id) {
+      if($('#adult'+id).val() == '' || $('#adult'+id).val() == '0') {
+        var adult = 0;
+      } else {
+        var adult = parseInt($('#adult'+id).val());
+      }
+      if($('#child'+id).val() == '' || $('#child'+id).val() == '0') {
+        var child = 0;
+      } else {
+        var child = parseInt($('#child'+id).val());
+      }
+      if($('#infant'+id).val() == '' || $('#infant'+id).val() == '0') {
+        var infant = 0;
+      } else {
+        var infant = parseInt($('#infant'+id).val());
+      }
+      var num = parseInt($('#child-num'+id).html());
+      var newnum = num + 1;
+      $('#child-num'+id).html(newnum);
+      $('#child'+id).val(newnum)
+
+      var totalpass = newnum + adult + infant;
+      $('#num'+id).html(totalpass);
+    }
+
+    function remchild(id) {
+      if($('#adult'+id).val() == '' || $('#adult'+id).val() == '0') {
+        var adult = 0;
+      } else {
+        var adult = parseInt($('#adult'+id).val());
+      }
+      if($('#child'+id).val() == '' || $('#child'+id).val() == '0') {
+        var child = 0;
+      } else {
+        var child = parseInt($('#child'+id).val());
+      }
+      if($('#infant'+id).val() == '' || $('#infant'+id).val() == '0') {
+        var infant = 0;
+      } else {
+        var infant = parseInt($('#infant'+id).val());
+      }
+      var num = parseInt($('#child-num'+id).html());
+      var result = num - 1;
+
+      if(result < 0) {
+        var newnum = 0;
+      } else {
+        var newnum = result;
+      }
+
+      $('#child-num'+id).html(newnum);
+      $('#child'+id).val(newnum)
+
+      var totalpass = newnum + adult + infant;
+      $('#num'+id).html(totalpass);
+    }
+
+    function addinfant(id) {
+      if($('#adult'+id).val() == '' || $('#adult'+id).val() == '0') {
+        var adult = 0;
+      } else {
+        var adult = parseInt($('#adult'+id).val());
+      }
+      if($('#child'+id).val() == '' || $('#child'+id).val() == '0') {
+        var child = 0;
+      } else {
+        var child = parseInt($('#child'+id).val());
+      }
+      if($('#infant'+id).val() == '' || $('#infant'+id).val() == '0') {
+        var infant = 0;
+      } else {
+        var infant = parseInt($('#infant'+id).val());
+      }
+      var num = parseInt($('#infant-num'+id).html());
+      var result = num + 1;
+
+      if(result > adult) {
+        $('#danger-msg'+id).html('Add least an Adult to an Infant');
+        var newnum = infant;
+      } else {
+        $('#danger-msg'+id).html('');
+        var newnum = result;
+      }
+
+      $('#infant-num'+id).html(newnum);
+      $('#infant'+id).val(newnum)
+
+      var totalpass = newnum + adult + child;
+      $('#num'+id).html(totalpass);
+    }
+
+    function reminfant(id) {
+      if($('#adult'+id).val() == '' || $('#adult'+id).val() == '0') {
+        var adult = 0;
+      } else {
+        var adult = parseInt($('#adult'+id).val());
+      }
+      if($('#child'+id).val() == '' || $('#child'+id).val() == '0') {
+        var child = 0;
+      } else {
+        var child = parseInt($('#child'+id).val());
+      }
+      if($('#infant'+id).val() == '' || $('#infant'+id).val() == '0') {
+        var infant = 0;
+      } else {
+        var infant = parseInt($('#infant'+id).val());
+      }
+      var num = parseInt($('#infant-num'+id).html());
+      var result = num - 1;
+
+      if(result > adult) {
+        $('#danger-msg'+id).html('Add least an Adult to an Infant');
+        var newnum = infant;
+      }else if (result < 0) {
+        $('#danger-msg'+id).html('');
+        var newnum = 0;
+      }else {
+        $('#danger-msg'+id).html('');
+        var newnum = result;
+      }
+
+      $('#infant-num'+id).html(newnum);
+      $('#infant'+id).val(newnum)
+
+      var totalpass = newnum + adult + child;
+      $('#num'+id).html(totalpass);
+    }
+  </script>
+
+  <!-- Add More Trips for Multi-City Flight Booking -->
+  <script>
+  $(document).ready(function () {
+
+// Denotes total number of rows
+var rowIdx = 0;
+
+// jQuery button click event to add a row
+$('#addBtn').on('click', function () {
+
+  // Adding a row inside the tbody.
+  $('#tbody').append(`<div id="first-row${++rowIdx}" class="mt-2">
+                    <h5 class="text-blue font-600">Trip</h5>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group mt-md-0">
+                          <label for="from" class="book-label">From</label>
+                          <select name="from[]" id="from${rowIdx}" class="form-control book-control">
+                            <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                            <option value="Abuja">Abuja</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <div class="form-group mt-md-0 mt-2">
+                          <label for="to" class="book-label">To</label>
+                          <select name="to[]" id="to${rowIdx}" class="form-control book-control">
+                            <option value="Abuja">Abuja</option>
+                            <option value="Lagos">Lagos  (Murtala Mohammed Airport)</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-3">
+                        <div class="form-group mt-md-0 mt-2">
+                        <label for="departure" class="book-label">Departure</label>
+                        <input type="date" name="departure[]" id="departure" class="form-control book-control">
+                      </div>
+                      </div>
+
+                      <div class="col-md-1">
+                        <br>
+                        <button type="button" class="btn btn-danger" onclick="document.getElementById('first-row${rowIdx}').remove()"><span class="fas fa-trash-alt"></span></button>
+                      </div>
+
+                    </div>
+                  </div>
+                  
+                  `);
+
+                    $('#from'+rowIdx, '#tbody').select2();
+                    $('#to'+rowIdx, '#tbody').select2();
+
+});
+
+});
+  </script>
+
+</body>
+
+</html>
