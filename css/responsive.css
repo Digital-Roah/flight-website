@@ -46,4 +46,46 @@
       .dest-area {
         padding: 15px 0px;
       }
+
+      .wizard > .steps a {
+        font-size: 13px !important;
+      }
+
+      .baggage-item .baggage-included {
+        font-size: 10px;
+        padding: 5px 10px;
+      }
+
+      .baggage-item .baggage-info {
+        font-size: 12px;
+      }
+
+      .config-text {
+        font-size: 14px;
+      }
+
+      .billing-table .cust-fav {
+        font-size: 11px;
+      }
+
+      .billing-table .plans th {
+        font-size: 16px;
+      }
+
+      .plan-cell {
+        font-size: 13px;
+      }
+
+      .billing-table .check-cover {
+        margin-left: 30px;
+      }
+      
+      .billing-table .check-coverbig {
+        margin-left: 30px;
+      }
+
+      .img-extra {
+        width: 150px;
+      }
+
 }

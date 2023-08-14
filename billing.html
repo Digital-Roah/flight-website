@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Flight Website - First Stage</title>
+  <title>Flight Website - Billing Information</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,10 +28,12 @@
     <link rel="stylesheet" href="aos/aos.css">
     <!-- Select 2 CSS -->
     <link rel="stylesheet" href="css/select2.min.css">
+    <!-- Form Steps Css -->
+    <link rel="stylesheet" href="css/steps.css">
 
 </head>
 
-<body>
+<body style="background: rgb(239, 240, 240);">
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light navbar-color">
@@ -87,6 +89,737 @@
   </header>
 
   <main>
+
+    <br>
+
+    <div class="container">
+
+      <div class="d-lg-none d-block mb-3">
+        <div class="text-end">
+      <button class="btn btn-secondary btn-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#Id1" aria-controls="Id1"><span class="icofont-listing-box"></span> Order Summary</button>
+      </div>
+      
+      <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="Id1" aria-labelledby="Enable both scrolling & backdrop">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title font-600 text-dark-emphasis" id="Enable both scrolling & backdrop">Order Summary</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="order-details">
+            <!-- <h5 class="mb-0 font-700 order-header">Your Order</h5>
+            <hr style="border-top: 1px solid grey;"> -->
+            <div class="order-timeterminal">
+              <h6 class="font-700 mb-0">Departure</h6>
+              <p class="font-400 text-dark-emphasis mb-0 mt-0">Sun 6 Aug 2023</p>
+              <h6 class="font-700 mb-0 d-inline">9:00 - 15:30 </h6><p class="font-400 text-dark-emphasis mb-0 mt-0 d-inline">(6h 30min)</p>
+              <p class="font-400 text-dark-emphasis mb-0 mt-0">LOS Lagos - LHR London</p>
+            </div>
+            <hr style="border-top: 1px solid grey;">
+            <div class="order-baggage">
+             <h5 class="font-700 mb-0">Bags</h5>
+             <h6 class="mt-2 mb-0 font-600"><span class="la la-shopping-bag text-dark-emphasis me-1"></span> Personal Item</h6>
+             <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">Personal Item Included for all passengers</p>
+             <h6 class="mt-2 mb-0 font-600"><span class="icofont-briefcase-1 text-dark-emphasis me-1"></span> Hand baggage</h6>
+             <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">2&times;8 kg Included for all passengers</p>
+             <h6 class="mt-2 mb-0 font-600"><span class="la la-briefcase text-dark-emphasis me-1"></span> Checked baggage</h6>
+             <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">2&times;32 kg Included for all passengers</p>
+            </div>
+            <hr>
+            <div class="order-contact">
+             <h6 class="font-700">Contact Information</h6>
+             <p class="font-400 text-dark-emphasis mt-0 mb-0 font-13" id="contemail"></p>
+             <p class="font-400 text-dark-emphasis mt-0 mb-0 font-13" id="contphone"></p>
+            </div>
+            <hr style="border-top: 1px solid grey;">
+            <div class="">
+             <div class="row">
+               <div class="col-lg-6 col-8">
+                 <span class="purchase-head"><span id="pass_adult_name1">Passenger 1</span>, adult</span>
+               </div>
+               <div class="col-lg-6 col-4 position-relative">
+                 <span class="purchase-head position-absolute bottom-0 right-0">US$6,834.94</span>
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-8">
+                 <span class="purchase-info text-dark-emphasis font-12">Price per adult</span>
+               </div>
+               <div class="col-4 position-relative">
+                 <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$6,036.04</span>
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-8">
+                 <span class="purchase-info font-12 text-dark-emphasis">Taxes, airline fee and agent booking fee</span>
+               </div>
+               <div class="col-4 position-relative">
+                 <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$798.90</span>
+               </div>
+             </div>
+
+             <div class="mt-3">
+               <div class="row">
+                 <div class="col-8">
+                   <span class="purchase-head">Extra Services</span>
+                 </div>
+                 <div class="col-4 position-relative">
+                   <span class="purchase-head position-absolute bottom-0 right-0">US$<span id="extra-total">0.00</span></span>
+                 </div>
+               </div>
+               <div class="row" id="planchosen" style="display: none;">
+                 <div class="col-8">
+                   <span class="purchase-info font-12 text-dark-emphasis"><span id="selectedplan"></span></span>
+                 </div>
+                 <div class="col-4 position-relative">
+                   <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$<span id="planamount"></span></span>
+                 </div>
+               </div>
+               <div class="row" id="trav-insurance" style="display: none;">
+                 <div class="col-8">
+                   <span class="purchase-info font-12 text-dark-emphasis">Travel Insurance</span>
+                 </div>
+                 <div class="col-4 position-relative">
+                   <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$484.06</span>
+                 </div>
+               </div>
+               <div class="row" id="airline-protection" style="display: none;">
+                 <div class="col-8">
+                   <span class="purchase-info font-12 text-dark-emphasis">Airline Insolvency Protection</span>
+                 </div>
+                 <div class="col-4 position-relative">
+                   <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$11.54</span>
+                 </div>
+               </div>
+               <div class="row" id="lossed-baggage" style="display: none;">
+                 <div class="col-8">
+                   <span class="purchase-info font-12 text-dark-emphasis">Lost Baggage</span>
+                 </div>
+                 <div class="col-4 position-relative">
+                   <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$7.65</span>
+                 </div>
+               </div>
+             </div>
+            </div>
+
+            <hr style="border-top: 1px solid grey;">
+
+            <div class="pb-3">
+            <h5 class="font-700 order-thead">Total Amount</h5>
+            <div class="row">
+             <div class="col-6">
+               <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">Subtotal</p>
+             </div>
+             <div class="col-6 text-end">
+               <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">US$<span class="subtotal">6,834.94</span></p>
+             </div>
+            </div>
+            <div class="row">
+             <div class="col-6">
+               <h6 class="font-700 font-15">Amount to pay</h6>
+             </div>
+             <div class="col-6 text-end position-relative">
+               <h6 class="font-700 font-15 position-absolute bottom-0 right-0">US$<span class="subtotal">6,834.94</span></h6>
+             </div>
+            </div>
+           </div>
+
+         </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+
+        <div class="col-lg-9">
+
+          <form id="contact" action="#">
+            <div>
+                <h3>Traveler Information</h3>
+                <section class="mt-0 step-body">
+                    <h4 class="step-header">Traveler Information</h4>
+
+                    <div class="step-card">
+                       <h5 class="card-header font-700">Contact Information for all passengers <span class="icofont-info-circle ms-1 text-blue"></span></h5>
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group travel-group mt-3">
+                            <label for="trav_email" class="form-label">Email *</label>
+                            <input type="text" name="trav_email" id="trav_email" class="form-control required email">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group travel-group mt-3">
+                            <label for="trav_mobile" class="form-label">Mobile Number *</label>
+                            <input type="tel" name="trav_mobile" id="trav_mobile" class="form-control required tel">
+                          </div>
+                        </div>
+                       </div>
+
+                       <div class="mt-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="subscribe" value="1" id="subscribe">
+                          <label class="form-check-label font-14 font-400" for="subscribe">
+                            No, I do not want to receive emails about cheap flight or other exclusive deals.
+                          </label>
+                        </div>
+                       </div>
+
+                    </div>
+
+                    <div class="step-card">
+                      <h5 class="card-header font-700">Passenger 1, adult</h5>
+
+
+                      <div class="mt-3">
+                        <div class="form-group travel-group">
+                          <label class="form-label">Gender *</label> <br>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="pass_gender_adult" id="male" value="m" checked>
+                          <label class="form-check-label font-400 font-15" for="male">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="pass_gender_adult" id="female" value="f">
+                          <label class="form-check-label font-400 font-15" for="female">Female</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group travel-group mt-3">
+                            <label for="pass_fname_adult" class="form-label">First Name(s) *</label>
+                            <input type="text" name="pass_fname_adult" id="pass_fname_adult1" onkeyup="adultname(1)" class="form-control required">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group travel-group mt-3">
+                            <label for="pass_lname_adult" class="form-label">Last name *</label>
+                            <input type="text" name="pass_lname_adult" id="pass_lname_adult1" onkeyup="adultname(1)" class="form-control required">
+                          </div>
+                        </div>
+                       </div>
+
+                       <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group travel-group mt-3">
+                            <label for="pass_mobile_adult" class="form-label">Phone Number *</label>
+                            <input type="tel" name="pass_mobile_adult" id="pass_mobile_adult" class="form-control required tel">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group travel-group mt-3">
+                            <label for="pass_age_adult" class="form-label">Age (12yrs<sup>+</sup>) *</label>
+                            <input type="number" name="pass_age_adult" id="pass_age_adult" class="form-control required" min="12">
+                          </div>
+                        </div>
+                       </div>
+
+                       <div class="baggage-area">
+                        <h5 class="mt-3 font-700">Select Baggage</h5>
+
+                        <div class="baggage-item card">
+                           <h6 class="font-700 mb-0">Personal Item</h6>
+                           <p class="my-3 font-400">A small bag that must fit under the seat in front of you.</p>
+                           <div class="row">
+                            <div class="col-lg-2 col-md-3 col-4">
+                              <img src="img/personal-baggage.png" alt="parsonal baggage" class="img img-fluid">
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-4 pt-md-4 pt-3">
+                              <span class="baggage-included">Included</span>
+                            </div>
+                           </div>
+                        </div>
+
+                        <div class="baggage-item card">
+                          <h6 class="font-700 mb-0">Hand Baggage</h6>
+                          <p class="my-3 font-400">Bagpack or Handbag that goes in the overhead compartment.</p>
+                          <div class="row">
+                           <div class="col-lg-2 col-md-3 col-4">
+                             <img src="img/baggage-icon1.png" alt="parsonal baggage" class="img img-fluid">
+                           </div>
+                           <div class="col-lg-2 col-md-3 col-4 pt-md-4 pt-3">
+                             <span class="baggage-included">Included</span>
+                           </div>
+                           <div class="col-lg-2 col-md-3 col-4 pt-md-4 pt-3">
+                            <span class="baggage-info">2 &times; 8kg</span>
+                          </div>
+                          </div>
+                       </div>
+
+                       <div class="baggage-item card">
+                        <h6 class="font-700 mb-0">Checked Baggage</h6>
+                        <p class="my-3 font-400">Suitcase or other bags that you want to check in.</p>
+                        <div class="row">
+                         <div class="col-lg-2 col-md-3 col-4">
+                           <img src="img/baggage-icon2.png" alt="parsonal baggage" class="img img-fluid">
+                         </div>
+                         <div class="col-lg-2 col-md-3 col-4 pt-md-4 pt-3">
+                           <span class="baggage-included">Included</span>
+                         </div>
+                         <div class="col-lg-2 col-md-3 col-4 pt-md-4 pt-3">
+                          <span class="baggage-info">2 &times; 3kg</span>
+                        </div>
+                        </div>
+                     </div>
+
+                       </div>
+
+                    </div>
+
+                    <h4 class="step-header text-dark mt-3">Configure your Trip</h4>
+
+                    <div class="step-card mb-2">
+                       <div class="row">
+                         <div class="col-md-3 col-4">
+                          <img src="img/hand-with-ticket.png" alt="" class="img img-fluid">
+                         </div>
+                         <div class="col-md-9 col-8">
+                          <h6 class="font-600 bag-subhead">Choose your own bundle</h6>
+                          <p class="config-text text-dark-emphasis my-2 my-md-3">Save 20% of your offer compared to a single product purchase.</p>
+                         </div>
+                       </div>
+
+                       <div class="table-responsive">
+                        <table class="table table-bordered billing-table">
+                          <tr>
+                            <th class="border-0 bg-transparent shadow-none"></th>
+                            <th class="border-0 bg-transparent shadow-none"></th>
+                            <th class="cust-fav">Customer Favourite</th>
+                            <th class="border-0 bg-transparent shadow-none"></th>
+                          </tr>
+                          <tr class="plans">
+                            <th class="bg-transparent shadow-none" style="border-top: 1px solid transparent; border-left: 1px solid transparent;"></th>
+                            <th>Standard <span class="icofont-info-circle text-blue"></span></th>
+                            <th>Premium <span class="icofont-info-circle text-blue"></span></th>
+                            <th>Premium+ <span class="icofont-info-circle text-blue"></span></th>
+                          </tr>
+                          <tr>
+                            <td class="plan-cell pt-md-4 pt-3 px-3 text-dark-emphasis">Premium Support</td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                          </tr>
+                          <tr>
+                            <td class="plan-cell px-3 text-dark-emphasis">Air Help plus flight delay compensation</td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                          </tr>
+                          <tr>
+                            <td class="plan-cell pt-md-4 pt-3 px-3 text-dark-emphasis">Check-in</td>
+                            <td class="plan-icon red text-center pt-3"><span class="icofont-close-line"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                          </tr>
+                          <tr>
+                            <td class="plan-cell pt-md-4 pt-3 px-3 text-dark-emphasis">Flight Updates by Sms</td>
+                            <td class="plan-icon red text-center pt-3"><span class="icofont-close-line"></span></td>
+                            <td class="plan-icon red text-center pt-3"><span class="icofont-close-line"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                          </tr>
+                          <tr>
+                            <td class="plan-cell pt-md-4 pt-3 px-3 text-dark-emphasis">Booking Number by Sms</td>
+                            <td class="plan-icon red text-center pt-3"><span class="icofont-close-line"></span></td>
+                            <td class="plan-icon red text-center pt-3"><span class="icofont-close-line"></span></td>
+                            <td class="plan-icon green text-center pt-3"><span class="icofont-check-alt"></span></td>
+                          </tr>
+                          <tr>
+                            <td class="font-500 p-3">Select *</td>
+                            <td class="text-center">
+                              <s class="text-grey plan-discount font-14 font-400">US$27.82</s>
+                              <h6 class="mb-0 plan-price">US$<span id="standamount">22.26</span></h6>
+                              <small class="font-400 text-dark-emphasis perperson">Price per Person</small> <br>
+                              <div class="form-check">
+                                <div class="check-cover">
+                                <input class="form-check-input d-block" type="radio" name="plan" id="standard" value="standard" onclick="updateprice()"> <br>
+                              </div>
+                              </div>
+                              <small class="d-block text-center font-400 text-dark-emphasis">
+                                Standard
+                              </small>
+                            </td>
+                            <td class="text-center">
+                              <s class="text-grey plan-discount font-14 font-400">US$27.82</s>
+                              <h6 class="mb-0 plan-price">US$<span id="premamount">28.26</span></h6>
+                              <small class="font-400 text-dark-emphasis perperson">Price per Person</small> <br>
+                              <div class="form-check">
+                                <div class="check-coverbig">
+                                <input class="form-check-input d-block" type="radio" name="plan" id="premium" value="premium" onclick="updateprice()"> <br>
+                              </div>
+                              </div>
+                              <small class="d-block text-center font-400 text-dark-emphasis">
+                                Premium
+                              </small>
+                            </td>
+                            <td class="text-center">
+                              <s class="text-grey plan-discount font-14 font-400">US$27.82</s>
+                              <h6 class="mb-0 plan-price">US$<span id="premplusamount">40.26</span></h6>
+                              <small class="font-400 text-dark-emphasis perperson">Price per Person</small> <br>
+                              <div class="form-check">
+                                <div class="check-cover">
+                                <input class="form-check-input d-block" type="radio" name="plan" id="premplus" value="premplus" onclick="updateprice()"> <br>
+                              </div>
+                              </div>
+                              <small class="d-block text-center font-400 text-dark-emphasis">
+                                Premium+
+                              </small>
+                            </td>
+                          </tr>
+                        </table>
+                       </div>
+
+                       <input type="hidden" id="standardhide" value="22.26">
+                       <input type="hidden" id="premiumhide" value="28.26">
+                       <input type="hidden" id="premplushide" value="40.26">
+
+                       <div align="right">
+                       <div class="remove-plan">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" name="removeplan" id="remplan" value="1">
+                          <label class="form-check-label font-500" for="remplan">I'll go without this</label>
+                        </div>
+                       </div>
+                      </div>
+
+                    </div>
+
+                </section>
+
+                <h3>Extra Services</h3>
+                <section class="mt-0 step-body">
+
+                  <h4 class="step-header">Extra Services</h4>
+
+                  <div class="step-card py-4">
+                     <div class="row">
+                      <div class="col-md-3 col-sm-4">
+                        <img src="img/travel-insurance.png" alt="" class="img img-fluid img-extra">
+                      </div>
+                      <div class="col-md-9 col-sm-8">
+                        <h5 class="card-header font-700">Travel Insurance</h5>
+                        <p class="mt-0 font-400">Travel with protection that covers you and you companions due to illness or injuries.</p>
+                        <p class="mt-0 font-400">Coverage Included for:</p>
+                        <ul class="extra-list">
+                          <li><span class="icofont-check-alt text-success me-1"></span> Trip interruption, cancellation and delays.</li>
+                          <li><span class="icofont-check-alt text-success me-1"></span> Emergency medical and dental expenses.</li>
+                          <li><span class="icofont-check-alt text-success me-1"></span> Emergency assistance and transport.</li>
+                          <li><span class="icofont-check-alt text-success me-1"></span> Baggage loss, delay of theft.</li>
+                        </ul>
+                        <p class="mt-0 font-400">... and more</p>
+                        <p class="mt-0 font-600 text-dark-emphasis font-15">This plan is available for US Residents only</p>
+                        <p class="font-400">Plan is issued by Cover Genius Insurance Services, LLC, includes insurance by US Fire and non-ins. services by on Call International. By clicking the button to select this coverage, I agree that I've read Plan <a href="#un">Terms & Conditions</a></p>
+                        <hr>
+                        <div class="row justify-content-end">
+                            <div class="col-md-8 col-12">
+                                <div class="row">
+                                  <div class="col-3 text-end pt-2">
+                                     <small class="text-grey font-500 d-block">Only</small>
+                                     <h6 class="font-700">US$484.06</h6>
+                                  </div>
+                                  <div class="col-9 ps-3">
+                                      <span class="font-14 font-400 d-block mb-1">Select an Option *</span>
+                                      <div class="form-check form-check-inline extra-cbox">
+                                        <input class="form-check-input required" type="radio" name="insurance" id="insure-no" value="1" onclick="updateprice()">
+                                        <label class="form-check-label text-dark-emphasis" for="insure-no">No Thanks</label>
+                                        </div>
+                                        <div class="form-check form-check-inline extra-cbox">
+                                        <input class="form-check-input required" type="radio" name="insurance" id="insure-yes" value="2" onclick="updateprice()">
+                                        <label class="form-check-label text-dark-emphasis" for="insure-yes">Add to Flight</label>
+                                        </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                     </div>
+                     <input type="hidden" id="insurancehide" value="484.06">
+                  </div>
+
+                  <div class="step-card py-4 mt-3">
+                    <div class="row">
+                     <div class="col-md-3 col-sm-4">
+                       <img src="img/air-insurance.png" alt="" class="img img-fluid img-extra">
+                     </div>
+                     <div class="col-md-9 col-sm-8">
+                       <h5 class="card-header font-700">Airline Insolvency Protection</h5>
+                       <p class="mt-0 font-400">Ensure you and your travel partners are protected if your airline declares bankruptcy and cancels your flight.</p>
+                       <p class="mt-0 font-400">Get Coverage for:</p>
+                       <ul class="extra-list">
+                         <li><span class="icofont-check-alt text-success me-1"></span> Your airfare for getting back home if your trip has already begun.</li>
+                         <li><span class="icofont-check-alt text-success me-1"></span> Your prepaid flight if you haven't left yet.</li>
+                       </ul>
+                       <p class="font-400">By purchasing Airline Insolvency Protection, I agree that I've read Plan <a href="#un">Terms & Conditions</a></p>
+                       <hr>
+                       <div class="row justify-content-end">
+                           <div class="col-md-8 col-12">
+                               <div class="row">
+                                 <div class="col-3 text-end pt-2">
+                                    <small class="text-grey font-500 d-block">Only</small>
+                                    <h6 class="font-700">US$11.54</h6>
+                                 </div>
+                                 <div class="col-9 ps-3">
+                                     <span class="font-14 font-400 d-block mb-1">Select an Option *</span>
+                                     <div class="form-check form-check-inline extra-cbox">
+                                       <input class="form-check-input required" type="radio" name="airprotect" id="airprotect-no" value="1" onclick="updateprice()">
+                                       <label class="form-check-label text-dark-emphasis" for="airprotect-no">No Thanks</label>
+                                       </div>
+                                       <div class="form-check form-check-inline extra-cbox">
+                                       <input class="form-check-input required" type="radio" name="airprotect" id="airprotect-yes" value="2" onclick="updateprice()">
+                                       <label class="form-check-label text-dark-emphasis" for="airprotect-yes">Add to Flight</label>
+                                       </div>
+                                 </div>
+                               </div>
+                           </div>
+                       </div>
+                     </div>
+                    </div>
+                    <input type="hidden" id="airprotecthide" value="11.54">
+                 </div>
+
+                 <div class="step-card py-4 mt-3">
+                  <div class="row">
+                   <div class="col-md-3 col-sm-4">
+                     <img src="img/lost-baggage.png" alt="" class="img img-fluid img-extra">
+                   </div>
+                   <div class="col-md-9 col-sm-8">
+                     <h5 class="card-header font-700">Lost Baggage</h5>
+                     <ul class="extra-list mt-3">
+                       <li><span class="icofont-check-alt text-success me-1"></span> Track your baggage status in real time and receive notifications via email, SMS, and instant message</li>
+                       <li><span class="icofont-check-alt text-success me-1"></span> Receive 500 USD for each bag that doesn't arrive within 96 hours.</li>
+                       <li><span class="icofont-check-alt text-success me-1"></span> This service doesn't affect any refunds you may be entitled to from your airline or insurance.</li>
+                     </ul>
+                     <p class="font-400">By clicking the button to select this coverage, I agree that I've read Plan <a href="#un">Terms & Conditions</a></p>
+                     <hr>
+                     <div class="row justify-content-end">
+                         <div class="col-md-8 col-12">
+                             <div class="row">
+                               <div class="col-3 text-end pt-2">
+                                  <small class="text-grey font-500 d-block">Only</small>
+                                  <h6 class="font-700">US$7.65</h6>
+                               </div>
+                               <div class="col-9 ps-3">
+                                   <span class="font-14 font-400 d-block mb-1">Select an Option *</span>
+                                   <div class="form-check form-check-inline extra-cbox">
+                                     <input class="form-check-input required" type="radio" name="lostbaggage" id="baggage-no" value="1" onclick="updateprice()">
+                                     <label class="form-check-label text-dark-emphasis" for="baggage-no">No Thanks</label>
+                                     </div>
+                                     <div class="form-check form-check-inline extra-cbox">
+                                     <input class="form-check-input required" type="radio" name="lostbaggage" id="baggage-yes" value="2" onclick="updateprice()">
+                                     <label class="form-check-label text-dark-emphasis" for="baggage-yes">Add to Flight</label>
+                                     </div>
+                               </div>
+                             </div>
+                         </div>
+                     </div>
+                   </div>
+                  </div>
+                  <input type="hidden" id="lostbaggagehide" value="7.65">
+               </div>
+
+               <input type="hidden" id="totalamount" value="6834.94">
+
+                </section>
+
+                <h3><span class="d-block d-sm-inline">Payment</span></h3>
+                <section class="mt-0 step-body">
+                  <h4 class="step-header">Payment</h4>
+
+                  <div class="step-card">
+                    <h5 class="card-header font-700">Billing Information for all passengers <span class="icofont-info-circle ms-1 text-blue"></span></h5>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group travel-group mt-3">
+                          <label for="billing_name" class="form-label">Name *</label>
+                          <input type="text" name="billing_name" id="billing_name" class="form-control required">
+                        </div>
+                      </div>
+                     <div class="col-md-6">
+                       <div class="form-group travel-group mt-3">
+                         <label for="billing_email" class="form-label">Email *</label>
+                         <input type="email" name="billing_email" id="billing_email" class="form-control required email">
+                       </div>
+                     </div>
+                     <div class="col-md-6">
+                       <div class="form-group travel-group mt-3">
+                         <label for="billing_mobile" class="form-label">Mobile Number *</label>
+                         <input type="tel" name="billing_mobile" id="billing_mobile" class="form-control required">
+                       </div>
+                     </div>
+                     <div class="col-md-6">
+                      <div class="form-group travel-group mt-3">
+                        <label for="billing_address" class="form-label">Address *</label>
+                        <input type="text" name="billing_address" id="billing_address" class="form-control required">
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="mt-3">
+                      <div class="form-group travel-group">
+                        <label class="form-label">Gender *</label> <br>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="biiling_gender" id="male" value="m" checked>
+                        <label class="form-check-label font-400 font-15" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="biiling_gender" id="female" value="f">
+                        <label class="form-check-label font-400 font-15" for="female">Female</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group travel-group mt-3">
+                          <label for="comments" class="form-label">Comments</label>
+                          <textarea name="comments" id="comments" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-3">
+                     <div class="form-check">
+                       <input class="form-check-input required" type="checkbox" name="agree" value="1" id="terms">
+                       <label class="form-check-label font-14 font-400" for="term">
+                         I agree to all <a href="#un">Terms & Conditions</a> regarding the plans and booking of this flight.
+                       </label>
+                     </div>
+                    </div>
+
+                 </div>
+                 
+                </section>
+            </div>
+        </form>
+            
+        </div>
+
+        <div class="col-lg-3 d-lg-block d-none">
+
+          <div class="order-details">
+             <h5 class="px-3 pt-3 mb-0 font-700 order-header">Your Order</h5>
+             <hr style="border-top: 1px solid grey;">
+             <div class="order-timeterminal px-3">
+               <h6 class="font-700 mb-0">Departure</h6>
+               <p class="font-400 text-dark-emphasis mb-0 mt-0">Sun 6 Aug 2023</p>
+               <h6 class="font-700 mb-0 d-inline">9:00 - 15:30 </h6><p class="font-400 text-dark-emphasis mb-0 mt-0 d-inline">(6h 30min)</p>
+               <p class="font-400 text-dark-emphasis mb-0 mt-0">LOS Lagos - LHR London</p>
+             </div>
+             <hr style="border-top: 1px solid grey;">
+             <div class="order-baggage px-3">
+              <h5 class="font-700 mb-0">Bags</h5>
+              <h6 class="mt-2 mb-0 font-600"><span class="la la-shopping-bag text-dark-emphasis me-1"></span> Personal Item</h6>
+              <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">Personal Item Included for all passengers</p>
+              <h6 class="mt-2 mb-0 font-600"><span class="icofont-briefcase-1 text-dark-emphasis me-1"></span> Hand baggage</h6>
+              <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">2&times;8 kg Included for all passengers</p>
+              <h6 class="mt-2 mb-0 font-600"><span class="la la-briefcase text-dark-emphasis me-1"></span> Checked baggage</h6>
+              <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">2&times;32 kg Included for all passengers</p>
+             </div>
+             <hr>
+             <div class="order-contact px-3">
+              <h6 class="font-700">Contact Information</h6>
+              <p class="font-400 text-dark-emphasis mt-0 mb-0 font-13" id="contemail2"></p>
+              <p class="font-400 text-dark-emphasis mt-0 mb-0 font-13" id="contphone2"></p>
+             </div>
+             <hr style="border-top: 1px solid grey;">
+             <div class="px-3">
+              <div class="row">
+                <div class="col-lg-6 col-8">
+                  <span class="purchase-head"><span id="pass_adult_name01">Passenger 1</span>, adult</span>
+                </div>
+                <div class="col-lg-6 col-4 position-relative">
+                  <span class="purchase-head position-absolute bottom-0 right-0">US$6,834.94</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <span class="purchase-info text-dark-emphasis font-12">Price per adult</span>
+                </div>
+                <div class="col-4 position-relative">
+                  <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$6,036.04</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <span class="purchase-info font-12 text-dark-emphasis">Taxes, airline fee and agent booking fee</span>
+                </div>
+                <div class="col-4 position-relative">
+                  <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$798.90</span>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <div class="row">
+                  <div class="col-8">
+                    <span class="purchase-head">Extra Services</span>
+                  </div>
+                  <div class="col-4 position-relative">
+                    <span class="purchase-head position-absolute bottom-0 right-0">US$<span id="extra-total2">0.00</span></span>
+                  </div>
+                </div>
+                <div class="row" id="planchosen2" style="display: none;">
+                  <div class="col-8">
+                    <span class="purchase-info font-12 text-dark-emphasis"><span id="selectedplan2"></span></span>
+                  </div>
+                  <div class="col-4 position-relative">
+                    <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$<span id="planamount2"></span></span>
+                  </div>
+                </div>
+                <div class="row" id="trav-insurance2" style="display: none;">
+                  <div class="col-8">
+                    <span class="purchase-info font-12 text-dark-emphasis">Travel Insurance</span>
+                  </div>
+                  <div class="col-4 position-relative">
+                    <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$484.06</span>
+                  </div>
+                </div>
+                <div class="row" id="airline-protection2" style="display: none;">
+                  <div class="col-8">
+                    <span class="purchase-info font-12 text-dark-emphasis">Airline Insolvency Protection</span>
+                  </div>
+                  <div class="col-4 position-relative">
+                    <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$11.54</span>
+                  </div>
+                </div>
+                <div class="row" id="lossed-baggage2" style="display: none;">
+                  <div class="col-8">
+                    <span class="purchase-info font-12 text-dark-emphasis">Lost Baggage</span>
+                  </div>
+                  <div class="col-4 position-relative">
+                    <span class="purchase-info text-dark-emphasis position-absolute bottom-0 right-0">US$7.65</span>
+                  </div>
+                </div>
+              </div>
+             </div>
+
+             <hr style="border-top: 1px solid grey;">
+
+             <div class="px-3 pb-3">
+             <h5 class="font-700 order-thead">Total Amount</h5>
+             <div class="row">
+              <div class="col-6">
+                <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">Subtotal</p>
+              </div>
+              <div class="col-6 text-end">
+                <p class="font-400 text-dark-emphasis mt-0 mb-1 font-13">US$<span class="subtotal2">6,834.94</span></p>
+              </div>
+             </div>
+             <div class="row">
+              <div class="col-6">
+                <h6 class="font-700 font-15">Amount to pay</h6>
+              </div>
+              <div class="col-6 text-end position-relative">
+                <h6 class="font-700 font-15 position-absolute bottom-0 right-0">US$<span class="subtotal2">6,834.94</span></h6>
+              </div>
+             </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 
     <section></section>
 
@@ -151,6 +884,12 @@
   <!-- Slick Carousel JS -->
   <script src="slick-js/jquery-migrate-1.2.1.min.js"></script>
   <script src="slick-1.8.1/slick-1.8.1/slick/slick.min.js"></script>
+
+  <!-- Jquery Validation For Steps -->
+   <script src="js/jquery.validate.js"></script>
+   <script src="js/jquery.steps.js"></script>
+    <!-- Form Steps JS -->
+    <script src="js/steps.js"></script>
   
   <!-- Select2 JS -->
   <script src="js/select2.min.js"></script>
@@ -188,6 +927,417 @@
         window.addEventListener('load', () => {
           aos_init();
         });
+  </script>
+
+  <!-- Order Billing Scripts -->
+  <script>
+    $('#trav_email').keyup(function()  {
+      $('#contemail').html($(this).val());
+      $('#contemail2').html($(this).val());
+      $('#billing_email').val($(this).val());
+    });
+    $('#trav_mobile').keyup(function()  {
+      $('#contphone').html($(this).val());
+      $('#contphone2').html($(this).val());
+      $('#billing_mobile').val($(this).val());
+    });
+
+    function adultname(id) {
+      var fname = $('#pass_fname_adult'+id).val();
+      var lname = $('#pass_lname_adult'+id).val();
+
+      if(fname == '' && lname == '') {
+        $('#pass_adult_name'+id).html('Passenger '+id);
+        $('#pass_adult_name0'+id).html('Passenger '+id);
+      } else {
+      $('#pass_adult_name'+id).html(fname+' '+lname);
+      $('#pass_adult_name0'+id).html(fname+' '+lname);
+    }
+    }
+
+    // Select Plan Change Function
+    function updateprice() {
+
+      if($('#remplan').is(':checked')) {
+        $('#remplan').removeAttr('checked');
+      }
+
+      var insurance = $('input[name="insurance"]:checked').val(); // 1
+      var airprotect = $('input[name="airprotect"]:checked').val(); // 2
+      var lostbaggage = $('input[name="lostbaggage"]:checked').val(); // 3
+      var planname = $('input[name="plan"]:checked').val(); // 4
+      // alert(planname);
+      var insureprice = parseFloat($('#insurancehide').val());
+      var airprice = parseFloat($('#airprotecthide').val());
+      var lostprice = parseFloat($('#lostbaggagehide').val());
+      var totalprice = parseFloat($('#totalamount').val());
+
+      // Checks the type of plan selected
+      if (planname == 'standard') {
+        var planprice = parseFloat($('#standardhide').val());
+        $('#planamount').html(planprice);
+        $('#selectedplan').html('Standard');
+        $('#planamount2').html(planprice);
+        $('#selectedplan2').html('Standard');
+      } else if(planname == 'premium') {
+        var planprice = parseFloat($('#premiumhide').val());
+        $('#planamount').html(planprice);
+        $('#selectedplan').html('Premium');
+        $('#planamount2').html(planprice);
+        $('#selectedplan2').html('Premium');
+      } else if(planname == 'premplus') {
+        var planprice = parseFloat($('#premplushide').val());
+        $('#planamount').html(planprice);
+        $('#selectedplan').html('Premium +');
+        $('#planamount2').html(planprice);
+        $('#selectedplan2').html('Premium +');
+      }
+
+      // Checks if any other extra service has been selected before seelcting this
+      // 1,2,3,4
+      if(insurance == '2' && airprotect == '2' && lostbaggage == '2' && planname !== '') {
+        var extraservice = planprice + insureprice + airprice + lostprice;
+        var newtotal = totalprice + planprice + insureprice + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').show();
+        $('#lossed-baggage').show();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').show();
+      }
+       // 1,2,3
+      else if(insurance == '2' && airprotect == '2' && lostbaggage == '2') {
+        var extraservice = insureprice + airprice + lostprice;
+        var newtotal = totalprice + insureprice + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').show();
+        $('#lossed-baggage').show();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').hide();
+      }
+      // 1,2,4
+      else if(insurance == '2' && airprotect == '2' && planname !== '') {
+        var extraservice = planprice + insureprice + airprice;
+        var newtotal = totalprice + planprice + insureprice + airprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').show();
+        $('#lossed-baggage').hide();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').show();
+      }
+       // 2,3,4
+      else if(airprotect == '2' && lostbaggage == '2' && planname !== '') {
+        var extraservice = planprice + airprice + lostprice;
+        var newtotal = totalprice + planprice + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').show();
+        $('#lossed-baggage').show();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').show();
+      }
+       // 1,2
+      else if(insurance == '2' && airprotect == '2') {
+        var extraservice = insureprice + airprice;
+        var newtotal = totalprice + insureprice + airprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').show();
+        $('#lossed-baggage').hide();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').hide();
+      }
+      // 1,3
+       else if(insurance == '2' && lostbaggage == '2') {
+        var extraservice = insureprice + lostprice;
+        var newtotal = totalprice + insureprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').show();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').hide();
+      }
+      // 1,4
+      else if(insurance == '2' && planname !== '') {
+        var extraservice = planprice + insureprice;
+        var newtotal = totalprice + planprice + insureprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').hide();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').show();
+      }
+      // 2,3
+       else if(airprotect == '2' && lostbaggage == '2') {
+        var extraservice = planprice + airprice + lostprice;
+        var newtotal = totalprice + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').show();
+        $('#lossed-baggage').show();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').hide();
+      }
+      // 2,4
+      else if(airprotect == '2' && planname !== '') {
+        var extraservice = airprice + lostprice;
+        var newtotal = totalprice + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').show();
+        $('#lossed-baggage').hide();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').show();
+      }
+      // 3,4
+      else if(lostbaggage == '2' && planname !== '') {
+        var extraservice = planprice + lostprice;
+        var newtotal = totalprice + planprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').show();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').show();
+      }
+      // 1
+      else if(insurance == '2') {
+        var extraservice = planprice + insureprice;
+        var newtotal = totalprice + insureprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').show();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').hide();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').show();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').hide();
+      }
+      // 2
+      else if(airprotect == '2') {
+        var extraservice = planprice + airprice;
+        var newtotal = totalprice + insureprice + airprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').show();
+        $('#lossed-baggage').hide();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').show();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').hide();
+      }
+      // 3
+      else if(lostbaggage == '2') {
+        var extraservice = planprice + lostprice;
+        var newtotal = totalprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').show();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').show();
+        $('#planchosen2').hide();
+      } 
+      // 4
+      else if(planname !== '') {
+        var extraservice = planprice;
+        var newtotal = totalprice + planprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').hide();
+        $('#planchosen').show();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').show();
+      }
+      // none 
+      else {
+        var extraservice = 0;
+        var newtotal = totalprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#trav-insurance').hide();
+        $('#airline-protection').hide();
+        $('#lossed-baggage').hide();
+        $('#planchosen').hide();
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+        $('#trav-insurance2').hide();
+        $('#airline-protection2').hide();
+        $('#lossed-baggage2').hide();
+        $('#planchosen2').hide();
+      }
+
+    }
+
+    // Remove Plan Configuration
+    $("#remplan").change(function() {
+      if(this.checked) {
+
+        $('input[name="plan"]').removeAttr('checked');
+
+      var insurance = $('input[name="insurance"]:checked').val();
+      var airprotect = $('input[name="airprotect"]:checked').val();
+      var lostbaggage = $('input[name="lostbaggage"]:checked').val();
+      var insureprice = parseFloat($('#insurancehide').val());
+      var airprice = parseFloat($('#airprotecthide').val());
+      var lostprice = parseFloat($('#lostbaggagehide').val());
+      var totalprice = parseFloat($('#totalamount').val());
+      var total = totalprice;
+
+            // Checks if any other extra service has been selected before seelcting this
+            if(insurance == '2' && airprotect == '2' && lostbaggage == '2') {
+        var extraservice = insureprice + airprice + lostprice;
+        var newtotal = total + insureprice + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+      else if(insurance == '2' && airprotect == '2') {
+        var extraservice = insureprice + airprice;
+        var newtotal = total + insureprice + airprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+       else if(insurance == '2' && lostbaggage == '2') {
+        var extraservice = insureprice + lostprice;
+        var newtotal = total + insureprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+       else if(airprotect == '2' && lostbaggage == '2') {
+        var extraservice = airprice + lostprice;
+        var newtotal = total + airprice + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+      else if(insurance == '2') {
+        var extraservice = insureprice;
+        var newtotal = total + insureprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+      else if(airprotect == '2') {
+        var extraservice = airprice;
+        var newtotal = total + insureprice + airprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+      else if(lostbaggage == '2') {
+        var extraservice = lostprice;
+        var newtotal = total + lostprice;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      } else {
+        var extraservice = 0;
+        var newtotal = total;
+        $('#extra-total').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal').html(newtotal.toFixed(2));
+        $('#extra-total2').html(parseFloat(extraservice).toFixed(2));
+        $('.subtotal2').html(newtotal.toFixed(2));
+      }
+
+      $('#planchosen').hide();
+      $('#planchosen2').hide();
+
+      }
+    });
+
   </script>
 
 </body>

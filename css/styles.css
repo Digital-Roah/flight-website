@@ -776,3 +776,254 @@ section {
   color: #2196c4;
   border: 1px solid #2196c4 !important;
 }
+
+/* JQUERY FORM STEP STYLES */
+.wizard > .content {
+  background: transparent !important;
+  /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); */
+  min-height: 0px !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+.wizard > .content > .body {
+  width: 100% !important;
+  position: relative !important;
+  padding: 0px !important;
+  height: auto !important;
+}
+
+.wizard > .steps > ul > li {
+  width: 33% !important;
+  text-align: center;
+}
+
+.wizard > .steps a {
+  margin: 0px 0px 10px 0px !important;
+  border-radius: 0px !important;
+  border-bottom: 4px solid #a7c8d4;
+  background: white;
+  font-weight: 400;
+}
+
+.wizard ul[role="tablist"] {
+  margin-left: 10px !important;
+}
+
+.wizard > .steps .number {
+  font-size: 15px  !important;
+  font-weight: 600;
+  color: #77a9bd;
+}
+
+.wizard > .steps > ul > li.current a {
+  border-bottom: 4px solid #2196c4;
+  background: #e3f1f7 !important;
+}
+
+.wizard > .steps > ul > li.current a .number {
+  color: #2196c4;
+}
+
+.wizard > .steps > ul > li.disabled a {
+  background: white !important;
+}
+
+.wizard > .steps > ul > li.error a {
+  border-bottom: 4px solid #dc3545;
+  background: #f8e1e3 !important;
+  color: black;
+}
+
+.wizard > .steps > ul > li.error a .number {
+  color: #dc3545;
+}
+
+.wizard > .steps > ul > li.done a {
+  border-bottom: 4px solid #2196c4;
+  background: #e3f1f7 !important;
+  color: black;
+}
+
+.wizard > .steps > ul > li.done a .number {
+  color: #2196c4;
+}
+
+.step-header {
+  font-size: 27px !important;
+  font-weight: 600 !important;
+}
+
+.step-card {
+  padding: 15px;
+  background: white;
+  margin-top: 20px;
+  /* box-shadow: 0 2px 6px rgb(0 0 0 / 0.2); */
+}
+
+.wizard > .actions .disabled a {
+  background: white !important;
+}
+
+.travel-group .form-label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.travel-group .form-control {
+  font-size: 16px !important;
+  padding: 10px 7px;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.travel-group .form-control:focus {
+  box-shadow: none;
+  border-color: #77a9bd !important;
+}
+
+.baggage-area .baggage-item {
+  padding: 15px 20px;
+  margin-top: 15px;
+}
+
+.baggage-item h6 {
+  font-size: 18px;
+}
+
+.baggage-item .baggage-included {
+  color: #146c43;
+  background: #ceecdf;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.baggage-item .baggage-info {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.bag-subhead {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.config-text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.billing-table {
+  border-top: 1px solid transparent !important;
+}
+
+.billing-table .cust-fav {
+  color: white;
+  background: #2196c4;
+  font-size: 13px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.billing-table .plans th {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 15px 25px 15px 25px;
+}
+
+.plan-cell {
+  max-width: 200px;
+  font-size: 15px;
+  font-weight: 500;
+  height: 70px;
+}
+
+.billing-table .plan-icon {
+  font-size: 22px;
+}
+
+.billing-table .plan-icon.green {
+  color: #0f9b5a;
+}
+
+.billing-table .plan-icon.red {
+  color: #dc3545;
+  font-size:  18px;
+}
+
+.billing-table .check-cover {
+  margin-left: 65px;
+}
+
+.billing-table .check-coverbig {
+  margin-left: 82px;
+}
+
+.billing-table .plan-price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.remove-plan {
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  width: 250px;
+}
+
+.extra-list {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.extra-list li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.extra-cbox {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Order Details Stylings */
+.order-header {
+  font-size: 23px;
+}
+
+.order-details {
+  background: white;
+}
+
+.order-timeterminal h6 {
+  font-size: 17px;
+}
+
+.order-timeterminal p {
+  font-size: 13px;
+}
+
+.purchase-head {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.right-0 {
+  right: 0;
+  padding-right: 10px;
+}
+
+.purchase-info {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.purchase-info.font-12 {
+  font-size: 12px !important;
+  font-weight: 400;
+}
+
+.order-thead {
+  font-size: 18px;
+}
